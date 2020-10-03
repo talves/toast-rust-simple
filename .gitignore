@@ -1,0 +1,8 @@
+.tmp
+public
+
+# Only the root node_modules for now
+/node_modules
+
+# We'll leave yarn out by default
+yarn.lock

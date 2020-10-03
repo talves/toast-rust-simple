@@ -1,0 +1,30 @@
+{
+  "name": "toast-rust-simple",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "author": "talves <tony@3alves.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@sector/breadbox": "^0.0.4",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.0.0",
+    "tailwindcss": "^1.8.10",
+    "toastrs": "^0.0.19"
+  },
+  "scripts": {
+    "prepare": "breadbox --dest public/web_modules",
+    "build": "npm run build:css && npm run build:site",
+    "build:css": "postcss --config postcss-config index.css -o public/styles.css",
+    "build:site": "toast incremental ."
+  },
+  "snowpack": {
+    "installOptions": {
+      "alias": {
+        "react": "preact/compat"
+      }
+    }
+  }
+}
